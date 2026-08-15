@@ -1,0 +1,44 @@
+HOW TO RUN THE APP ON YOUR MOBILE DEVICE
+========================================
+
+1) Open a terminal in the project folder
+
+cd /d "C:\Users\sanuv\TryingFirst\my-mobile-app"
+
+2) Install dependencies
+
+npm install
+
+3) Start the app
+
+npx expo start
+
+4) Open it on your phone
+
+- Install Expo Go on your phone
+- Connect your phone and computer to the same Wi-Fi network
+- Scan the QR code shown in the terminal
+
+5) If the app does not start on Android or the port is busy
+
+npx expo start --android --clear
+
+or
+
+npx expo start --clear --port 8082
+
+6) If you use Android Studio emulator
+
+npx expo start --android
+
+Important:
+- Use the command prompt (cmd) if PowerShell blocks the commands.
+- If you see a native package error, run:
+
+npx expo install react-native-safe-area-context@~5.6.0 react-native-screens@~4.16.0
+
+Then start again:
+
+npx expo start --android --clear
+
+This app is a Todo List app. After it opens, you can add tasks, mark them complete, and delete them.

@@ -1,0 +1,98 @@
+TODO LIST ARCHITECTURE
+======================
+
+1. Application Entry Point
+---------------------------
+App.tsx starts the application and creates the navigation container.
+
+The app now has one screen:
+- TodoListScreen
+
+2. Navigation Layer
+-------------------
+Technology:
+- React Navigation
+- Bottom Tab Navigator
+
+App.tsx registers TodoListScreen as the Todo List tab. The tab uses the list icon and label.
+
+3. Todo List Screen
+-------------------
+File:
+- screens/TodoListScreen.tsx
+
+TodoListScreen is responsible for displaying the complete Todo List feature:
+- Screen title
+- Text input for a new todo
+- Add button
+- Todo list
+- Empty-list message
+- Total and completed todo statistics
+
+4. Data Model
+-------------
+Each todo has three properties:
+- id: A unique string created from the current timestamp.
+- text: The todo description entered by the user.
+- completed: A boolean showing whether the todo is finished.
+
+TypeScript interface:
+- interface Todo { id: string; text: string; completed: boolean }
+
+5. State Management
+--------------------
+The screen uses React useState:
+- todos: Stores the array of Todo objects.
+- input: Stores the text currently entered in the input field.
+
+The data is currently stored only in component memory. Todos will be lost when the app is fully closed or restarted.
+
+6. User Actions and Data Flow
+-----------------------------
+Add todo:
+1. The user enters text.
+2. addTodo validates that the text is not empty.
+3. A new Todo object is created.
+4. The new todo is added to the beginning of the todos array.
+5. The input field is cleared.
+
+Complete or uncomplete todo:
+1. The user presses the checkbox.
+2. toggleTodo finds the todo by id.
+3. The completed value is changed.
+4. React updates the list and applies the completed style.
+
+Delete todo:
+1. The user presses the delete button.
+2. deleteTodo finds the todo by id.
+3. The todo is removed from the todos array.
+4. The list and statistics update automatically.
+
+7. Presentation Layer
+---------------------
+React Native components used:
+- View: Groups layout sections.
+- Text: Displays labels, todo text, and statistics.
+- TextInput: Accepts new todo text.
+- Pressable: Provides add, complete, and delete actions.
+- FlatList: Efficiently renders the todo collection.
+
+8. Rendering Flow
+-----------------
+React state changes cause TodoListScreen to render again:
+- FlatList receives the latest todos array.
+- renderTodo creates each todo row.
+- Completed todos receive a line-through style.
+- The statistics calculate the total and completed counts.
+
+9. Future Improvements
+----------------------
+Possible next architecture steps:
+- Add persistent storage with AsyncStorage or a database.
+- Move Todo type definitions into a separate types file.
+- Move todo operations into a custom hook such as useTodos.
+- Split each todo row into a reusable TodoItem component.
+- Add editing, filtering, and due dates.
+
+Short video explanation:
+"The app uses React Native, Expo, and TypeScript. App.tsx controls navigation, while TodoListScreen contains the Todo List UI and logic. Todos are stored in React state, and users can add, complete, or delete items. FlatList renders the todos efficiently, and the statistics are calculated from the current state."

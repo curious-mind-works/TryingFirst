@@ -1,0 +1,30 @@
+TECHNOLOGIES USED IN THIS PROJECT
+=================================
+
+Project type:
+- Cross-platform mobile application
+
+Main technologies:
+- React Native: Builds the mobile user interface.
+- Expo SDK 54: Provides the development tools and runtime for the React Native app.
+- React 19.1.0: The JavaScript library used to create the app components.
+- TypeScript: Adds type safety and uses .ts/.tsx source files.
+- React Navigation: Handles navigation between app screens.
+- Bottom Tab Navigator: Provides the Todo List navigation tab.
+
+Project screens:
+- TodoListScreen: Todo list screen.
+
+Important files:
+- App.tsx: Main app entry point and tab navigation setup.
+- package.json: Project dependencies and commands.
+- tsconfig.json: TypeScript configuration.
+
+Commands:
+- npm start: Start the Expo development server.
+- npm run android: Open the app for Android.
+- npm run ios: Open the app for iOS.
+- npm run web: Open the app in a web browser.
+
+Simple video explanation:
+"I am building a cross-platform Todo List mobile app with React Native and Expo. I am using TypeScript for the code and React Navigation for the app navigation. Users can add, complete, and delete todo items."

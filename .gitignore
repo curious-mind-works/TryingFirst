@@ -1,0 +1,17 @@
+# Node
+node_modules/
+**/node_modules/
+
+# Expo
+.expo/
+**/.expo/
+web-build/
+**/dist/
+
+# VS Code
+.vscode/
+**/.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
